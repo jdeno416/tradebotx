@@ -1,0 +1,210 @@
+{
+    "2025-04-06 16:26:01": {
+        "assessment": "Puts Strategy ",
+        "score": 65,
+        "percentage": 61.9,
+        "answers": [
+            {
+                "question": "Did you buy puts at the TOP",
+                "answer": "Yes",
+                "weight_yes": 45,
+                "weight_no": -15,
+                "critical": false
+            },
+            {
+                "question": "Did the stock fake Breakout",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did you buy after a structure break",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did stock make a higher low ",
+                "answer": "No",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did VWAP/SMA crossover ",
+                "answer": "Yes",
+                "weight_yes": 20,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did you make 3 trades already or loss more than $50 dollars ",
+                "answer": "No",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": true
+            }
+        ],
+        "result": "Worked"
+    },
+    "2025-04-06 16:28:23": {
+        "assessment": "Puts Strategy ",
+        "score": 25,
+        "percentage": 23.81,
+        "answers": [
+            {
+                "question": "Did you buy puts at the TOP",
+                "answer": "No",
+                "weight_yes": 45,
+                "weight_no": -15,
+                "critical": false
+            },
+            {
+                "question": "Did the stock fake Breakout",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did you buy after a structure break",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did stock make a higher low ",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did VWAP/SMA crossover ",
+                "answer": "Yes",
+                "weight_yes": 20,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did you make 3 trades already or loss more than $50 dollars ",
+                "answer": "No",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": true
+            }
+        ],
+        "result": "Didn\u2019t Work"
+    },
+    "2025-04-08 16:42:49": {
+        "assessment": "New Assessment",
+        "score": 60,
+        "percentage": 63.16,
+        "answers": [
+            {
+                "question": "Is the Stock under VWAP/SMA",
+                "answer": "Yes",
+                "weight_yes": 30,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did the stock break structure",
+                "answer": "Yes",
+                "weight_yes": 30,
+                "weight_no": -25,
+                "critical": false
+            },
+            {
+                "question": "Break of key level ",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did Vwap crossover ",
+                "answer": "No",
+                "weight_yes": 25,
+                "weight_no": -10,
+                "critical": false
+            }
+        ],
+        "result": "Pending"
+    },
+    "2025-04-08 16:43:34": {
+        "assessment": "Opening Puts",
+        "score": 95,
+        "percentage": 100.0,
+        "answers": [
+            {
+                "question": "Is the Stock under VWAP/SMA",
+                "answer": "Yes",
+                "weight_yes": 30,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did the stock break structure",
+                "answer": "Yes",
+                "weight_yes": 30,
+                "weight_no": -25,
+                "critical": false
+            },
+            {
+                "question": "Break of key level ",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did Vwap crossover ",
+                "answer": "Yes",
+                "weight_yes": 25,
+                "weight_no": -10,
+                "critical": false
+            }
+        ],
+        "result": "Pending"
+    },
+    "2025-04-08 16:48:10": {
+        "assessment": "Opening Puts",
+        "score": -55,
+        "percentage": -57.89,
+        "answers": [
+            {
+                "question": "Is the Stock under VWAP/SMA",
+                "answer": "No",
+                "weight_yes": 30,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did the stock break structure",
+                "answer": "No",
+                "weight_yes": 30,
+                "weight_no": -25,
+                "critical": false
+            },
+            {
+                "question": "Break of key level ",
+                "answer": "No",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did Vwap crossover ",
+                "answer": "No",
+                "weight_yes": 25,
+                "weight_no": -10,
+                "critical": false
+            }
+        ],
+        "result": "Pending"
+    }
+}

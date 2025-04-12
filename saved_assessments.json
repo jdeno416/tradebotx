@@ -1,0 +1,144 @@
+{
+    "Puts Strategy ": [
+        {
+            "question": "Did you buy puts at the TOP",
+            "weight_yes": 45,
+            "weight_no": -15,
+            "critical": false
+        },
+        {
+            "question": "Did the stock fake Breakout",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did you buy after a structure break",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did stock make a higher low ",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did VWAP/SMA crossover ",
+            "weight_yes": 20,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did you make 3 trades already or loss more than $50 dollars ",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": true
+        }
+    ],
+    "Calls Strategy ": [
+        {
+            "question": "Did the opening price action have a lot of buying pressure ",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did you buy calls on a pull back",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        }
+    ],
+    "Test": [
+        {
+            "question": "",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        }
+    ],
+    "Opening Puts": [
+        {
+            "question": "Is the Stock under VWAP/SMA",
+            "weight_yes": 30,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did the stock break structure",
+            "weight_yes": 25,
+            "weight_no": -25,
+            "critical": false
+        },
+        {
+            "question": "Break of key level ",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did Vwap crossover ",
+            "weight_yes": 25,
+            "weight_no": -10,
+            "critical": false
+        }
+    ],
+    "Mid Morning Puts": [
+        {
+            "question": "Is the stock at a Key level ",
+            "weight_yes": 15,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did stock fake breakout ",
+            "weight_yes": 10,
+            "weight_no": -5,
+            "critical": false
+        },
+        {
+            "question": "Did stock make a higher low",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did stock break structure ",
+            "weight_yes": 30,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Under SMA",
+            "weight_yes": 15,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Did VWAP crossover ",
+            "weight_yes": 30,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Is stock price action good",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Big red candles",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": false
+        },
+        {
+            "question": "Have you made 3 trades or loss more then $50 dollars",
+            "weight_yes": 10,
+            "weight_no": -10,
+            "critical": true
+        }
+    ]
+}
