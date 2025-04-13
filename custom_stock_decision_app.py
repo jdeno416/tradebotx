@@ -100,7 +100,7 @@ if screen_width:
 st.markdown("""
     <style>
         .stApp { background: linear-gradient(to right, #f8f9fa, #e9ecef); color: black; }
-        .stButton>button { background-color: #333333; color: white; font-weight: bold;
+        .stButton>button { background-color: #000000; color: white; font-weight: bold;
             border-radius: 16px; padding: 12px; font-size: 16px; width: 115%; }
         .stButton>button:hover { background-color: #27ae60; }
         .critical-warning { color: red; font-size: 20px; font-weight: bold; text-align: center; }
@@ -162,7 +162,7 @@ if st.session_state.active_tab == "home":
         except Exception as e:
             st.error(f"Failed to fetch stock price: {e}")
 
-        st_autorefresh(interval=5000, key="stock_refresh")
+        st_autorefresh(interval=1000, key="stock_refresh")
 
         entry_price = st.number_input("Set Entry Price", value=st.session_state.entry_price or 0.0)
         if entry_price:
