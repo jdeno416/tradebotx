@@ -8,6 +8,7 @@ from datetime import datetime
 from PIL import Image
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
+from streamlit_js_eval import streamlit_js_eval
 
 
 # === File Paths ===
@@ -70,6 +71,30 @@ saved_assessments = load_json(ASSESSMENT_FILE)
 st.session_state.strategy_log = load_json(STRATEGY_FILE)
 trade_reviews = load_json(TRADE_REVIEW_FILE)
 def save_trade_reviews(data): save_json(TRADE_REVIEW_FILE, data)
+
+
+
+def show_desktop_layout():
+    st.title("TradeBotX - Desktop View")
+    st.write("This is the layout for desktop users.")
+    # Add your full desktop layout code here
+
+def show_mobile_layout():
+    st.title("TradeBotX - Mobile View")
+    st.write("This is the layout for mobile users.")
+    # Add your full mobile layout code here
+
+
+screen_width = streamlit_js_eval(js_expressions="screen.width", key="SCR")
+
+if screen_width:
+    if screen_width < 768:
+        st.markdown("### 📱 Mobile View")
+        show_mobile_layout()
+    else:
+        st.markdown("### 💻 Desktop View")
+        show_desktop_layout()
+
 
 # === Styling ===
 st.markdown("""
