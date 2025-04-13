@@ -100,7 +100,7 @@ if screen_width:
 st.markdown("""
     <style>
         .stApp { background: linear-gradient(to right, #f8f9fa, #e9ecef); color: black; }
-        .stButton>button { background-color: #2ecc71; color: white; font-weight: bold;
+        .stButton>button { background-color: #333333; color: white; font-weight: bold;
             border-radius: 16px; padding: 12px; font-size: 16px; width: 115%; }
         .stButton>button:hover { background-color: #27ae60; }
         .critical-warning { color: red; font-size: 20px; font-weight: bold; text-align: center; }
