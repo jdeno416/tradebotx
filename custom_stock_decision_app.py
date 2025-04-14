@@ -55,7 +55,7 @@ defaults = {
     "score": 0, "percentage": 0, "question_idx": 0, "questions": [],
     "assessment_started": False, "selected_assessment": None,
     "active_tab": "home", "percentage_history": [], "strategy_log": [],
-    "monthly_wins": 3, "monthly_losses": 1, "entry_price": None,
+    "monthly_wins": 0, "monthly_losses": 0, "entry_price": None,
     "exit_price": None, "target_price": None, "stop_loss": None,
     "stock_symbol": None, "current_price": None, "answers": []
 }
@@ -231,51 +231,70 @@ elif st.session_state.active_tab == "assessments":
             st.rerun()
 
     else:
-        idx = st.session_state.question_idx
-        if idx < len(st.session_state.questions):
-            q = st.session_state.questions[idx]
-            st.subheader(f"{q['question']}?")
-            ans = st.radio("Your Answer", ["Yes", "No", "Neutral"], key=f"ans_{idx}")
+        st.subheader("🧠 Answer the Questions")
 
-            col1, col2 = st.columns(2)
-            if col1.button("⬅️ Back") and idx > 0: st.session_state.question_idx -= 1; st.rerun()
-            if col2.button("Next ➡️"):
-                if ans == "Yes" and q["critical"]:
-                    st.session_state.score = 0
-                elif ans == "Yes":
-                    st.session_state.score += q["weight_yes"]
-                elif ans == "No":
-                    st.session_state.score += q["weight_no"]
+        responses = {}
+        score = 0
+        critical_triggered = False
+        total_yes_weight = sum(q["weight_yes"] for q in st.session_state.questions)
 
-                st.session_state.answers.append({
+        for i, q in enumerate(st.session_state.questions):
+            col1, col2 = st.columns([6, 4])
+            with col1:
+                st.markdown(f"**{q['question']}**")
+            with col2:
+                response = st.radio(
+                    f"answer_{i}", ["Unanswered", "Yes", "No"], key=f"resp_{i}", horizontal=True, label_visibility="collapsed"
+                )
+                responses[i] = response
+
+        answers = []
+        for i, q in enumerate(st.session_state.questions):
+            answer = responses[i]
+            if answer == "Yes":
+                if q["critical"]:
+                    critical_triggered = True
+                else:
+                    score += q["weight_yes"]
+            elif answer == "No":
+                score += q["weight_no"]
+
+            if answer in ["Yes", "No"]:
+                answers.append({
                     "question": q["question"],
-                    "answer": ans,
+                    "answer": answer,
                     "weight_yes": q["weight_yes"],
                     "weight_no": q["weight_no"],
                     "critical": q["critical"]
                 })
 
-                total_yes_weight = sum(q["weight_yes"] for q in st.session_state.questions)
-                st.session_state.percentage = round((st.session_state.score / total_yes_weight) * 100 if total_yes_weight else 0, 2)
-                st.session_state.percentage_history.append(st.session_state.percentage)
-                st.session_state.question_idx += 1
-                st.rerun()
-        else:
-            st.write(f"✅ Final Score: {st.session_state.score}")
-            st.write(f"📊 Final Percentage: {st.session_state.percentage}%")
+        if critical_triggered:
+            st.markdown(
+                "<h3 style='color:red;'>⚠️ Warning: You Are Over Trading Limit. Maximum Loss Hit.</h3>",
+                unsafe_allow_html=True
+            )
+            score = 0
+
+        if any(a in ["Yes", "No"] for a in responses.values()):
+            percentage = round((score / total_yes_weight) * 100 if total_yes_weight else 0, 2)
+            st.markdown(f"### ✅ Live Score: **{percentage}%**")
+            st.session_state.score = score
+            st.session_state.percentage = percentage
+            st.session_state.answers = answers
 
             if st.button("💾 Save to Trade Review"):
                 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 trade_reviews[timestamp] = {
                     "assessment": st.session_state.selected_assessment,
-                    "score": st.session_state.score,
-                    "percentage": st.session_state.percentage,
-                    "answers": st.session_state.answers,
+                    "score": score,
+                    "percentage": percentage,
+                    "answers": answers,
                     "result": "Pending"
                 }
                 save_trade_reviews(trade_reviews)
                 st.success("Saved to Trade Review!")
 
+      	
 # === Progress Chart ===
 elif st.session_state.active_tab == "progress":
     st.subheader("📊 Score Progress Chart")

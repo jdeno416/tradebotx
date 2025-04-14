@@ -206,5 +206,76 @@
             }
         ],
         "result": "Pending"
+    },
+    "2025-04-13 20:12:06": {
+        "assessment": "Mid Morning Puts",
+        "score": 120,
+        "percentage": 85.71,
+        "answers": [
+            {
+                "question": "Is the stock at a Key level ",
+                "answer": "Yes",
+                "weight_yes": 15,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did stock fake breakout ",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -5,
+                "critical": false
+            },
+            {
+                "question": "Did stock make a higher low",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did stock break structure ",
+                "answer": "Yes",
+                "weight_yes": 30,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Under SMA",
+                "answer": "Yes",
+                "weight_yes": 15,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Did VWAP crossover ",
+                "answer": "Yes",
+                "weight_yes": 30,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Is stock price action good",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Big red candles",
+                "answer": "Yes",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": false
+            },
+            {
+                "question": "Have you made 3 trades or loss more then $50 dollars",
+                "answer": "No",
+                "weight_yes": 10,
+                "weight_no": -10,
+                "critical": true
+            }
+        ],
+        "result": "Pending"
     }
 }
